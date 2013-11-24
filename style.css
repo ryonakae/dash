@@ -790,6 +790,11 @@ footer div p a {
 footer div p a:hover {
   color: white;
 }
+footer div .share li {
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   #features ul li {
