@@ -1,0 +1,239 @@
+@charset "utf-8";
+
+
+// Compass Import
+@import "compass";
+
+// Reset or Normalize
+// parameter: "compass/reset" / "_normalize"
+@import "compass/reset";
+
+// Sass Import
+@import "_variable";
+@import "_mixin";
+@import "_dash";
+
+
+// Edit Area Start
+// ------------------------------
+
+
+// Common
+body {
+  font-family: $webfont;
+  font-size: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+
+// header
+header {
+  background: url('./img/bg_header.png');
+  @include background-size(50%);
+  color: $color-inverse;
+  padding-top: 90px;
+  padding-bottom: 95px;
+  
+  ::selection {
+    background: #333;
+    color: $color-link;
+  }
+  
+  a {
+    color: $color-inverse;
+    
+    &:hover {
+      color: $color-inverse;
+    }
+  }
+
+  h1 {
+    font-size: 130px;
+    line-height: 130px;
+    margin: 0;
+    font-family: $webfont;
+    letter-spacing: 0.06em;
+  }
+  
+  .read {
+    font-size: 140%;
+  }
+  
+  .link {
+    font-size: 75%;
+    
+    .icon {
+      font-size: 200%;
+      line-height: 0;
+      vertical-align: -0.1em;
+      margin-right: 5px;
+    }
+    
+    .author {
+      margin-left: 20px;
+    }
+  }
+  
+  .btnarea {
+    .btn {
+      position: relative;
+      z-index: 2;
+      font-size: 22px;
+      background: none;
+      border: 1px solid #fff;
+      width: 240px;
+      padding-top: 0.9em;
+      padding-bottom: 0.8em;
+      @include transition-property(background-color, color);
+      
+      &:after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: -1px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        border: 1px solid #fff;
+        @include border-radius(0 0 8px 8px);
+        border-top: none;
+      }
+      
+      &:hover {
+        background-color: $color-inverse;
+        color: $color-link;
+        @include opacity(1);
+      }
+    }
+    
+    .download {
+      margin-right: 7px;
+    }
+    
+    .github {
+      margin-left: 7px;
+    }
+  }
+}
+
+
+// Wrapper
+.wrapper {
+  padding-top: 90px;
+  padding-bottom: 90px;
+
+  h2 {
+    font-size: 320%;
+  }
+  
+  p {
+    line-height: 1.5;
+  }
+  
+}
+
+
+// features
+#features {
+  ul {
+    li {
+      h3 {
+        color: $color-link;
+      }
+      
+      p {
+        font-size: 70%;
+      }
+    }
+  }
+}
+
+
+// usage
+#usage {
+  background-color: #f2f2f2;
+
+  .grid {
+    div {
+      margin-top: 20px;
+      background-color: #d1d1d1;
+      font-size: 90%;
+      padding: 1em 0;
+      @include border-radius(5px);
+      @include hoverEffect;
+      @include transition-property(background-color, color);
+      
+      &:hover {
+        background-color: $color-link;
+        color: $color-inverse;
+        @include opacity(1);
+      }
+      
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  
+  .btnarea {
+    .btn {
+      margin-top: 20px;
+      margin-left: 7px;
+      margin-right: 7px;
+      vertical-align: bottom;
+    }
+  }
+}
+
+
+// license
+#license {
+  ul {
+    li {
+      h3 {
+        color: $color-link;
+      }
+      
+      p {
+        font-size: 70%;
+      }
+    }
+  }
+}
+
+
+// footer
+footer {
+  background: url('./img/bg_footer.png');
+  @include background-size(50%);
+  color: $color-inverse;
+  
+  div {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    
+    p {
+      font-size: 70%;
+      
+      a {
+        color: $color-inverse;
+        
+        &:hover {
+          color: $color-inverse;
+        }
+      }
+    }
+  }
+}
+
+
+
+// ------------------------------
+// Edit Area End
+
+
+// Media Queries
+@import "_media-queries";

@@ -1,0 +1,87 @@
+// Retina Display
+@media
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 1.5dppx) {
+
+}
+
+
+// Tablet
+@include mediaquery-tablet {
+  // features
+  #features {
+    ul {
+      li {
+        width: 47.5%;
+      }
+    }
+  }
+}
+
+
+// SmartPhone
+@include mediaquery-smartphone {
+  // header
+  header { 
+    padding-top: 90px * 0.8;
+    padding-bottom: 95px * 0.8;
+    @include background-size(60%);
+   
+    h1 {
+      font-size: 90px;
+      line-height: 90px;
+    }
+    
+    .read {
+      line-height: 1.2;
+    }
+    
+    .link {
+      .author {
+        margin-left: 10px;
+      }
+    }
+    
+    .btnarea {
+      .btn {
+        width: 100%;
+      }
+      
+      .download {
+        margin-right: 0;
+      }
+      
+      .github {
+        margin-left: 0;
+        margin-top: 20px + 4;
+      }
+    }
+  }
+  
+  
+  // Wrapper
+  .wrapper {
+    padding-top: 90px * 0.7;
+    padding-bottom: 90px * 0.7;
+  
+    h2 {
+      font-size: 320% * 0.7;
+    }
+    
+    p {
+      line-height: 1.3;
+    }
+    
+  }
+  
+  
+  // usage
+  #usage {    
+    .btnarea {
+      .btn {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}
