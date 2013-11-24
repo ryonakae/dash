@@ -1,0 +1,913 @@
+@charset "utf-8";
+/* normalize.css v2.1.3 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "Entypo";
+  src: url('font/entypo/entypo.eot');
+  src: url('font/entypo/entypo.eot?#iefix') format('eot'), url('font/entypo/entypo.woff') format('woff'), url('font/entypo/entypo.ttf') format('truetype'), url('font/entypo/entypo.svg') format('svg');
+  font-weight: "normal";
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "Entypo Social";
+  src: url('font/entypo/entypo.eot');
+  src: url('font/entypo/entypo.eot?#iefix') format('eot'), url('font/entypo/entypo-social.woff') format('woff'), url('font/entypo/entypo.ttf-social') format('truetype'), url('font/entypo/entypo.svg-social') format('svg');
+  font-weight: "normal";
+  font-style: "normal";
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: whitesmoke;
+  color: #333333;
+  font-family: Helvetica, Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+  font-size: 100%;
+}
+body ::selection {
+  background: #f9ac2b;
+  color: white;
+}
+
+a {
+  color: #f9ac2b;
+  cursor: pointer;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+  color: #fcd38e;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+  text-rendering: optimizeLegibility;
+  word-break: break-all;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-35 {
+  margin-top: 35px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-45 {
+  margin-top: 45px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-55 {
+  margin-top: 55px;
+}
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+.mt-65 {
+  margin-top: 65px;
+}
+
+.mt-70 {
+  margin-top: 79px;
+}
+
+.mt-75 {
+  margin-top: 75px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.mt-85 {
+  margin-top: 85px;
+}
+
+.mt-90 {
+  margin-top: 90px;
+}
+
+.mt-95 {
+  margin-top: 95px;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-25 {
+  margin-bottom: 25px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mb-35 {
+  margin-bottom: 35px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-45 {
+  margin-bottom: 45px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mb-55 {
+  margin-bottom: 55px;
+}
+
+.mb-60 {
+  margin-bottom: 60px;
+}
+
+.mb-65 {
+  margin-bottom: 65px;
+}
+
+.mb-70 {
+  margin-bottom: 70px;
+}
+
+.mb-75 {
+  margin-bottom: 75px;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.mb-85 {
+  margin-bottom: 85px;
+}
+
+.mb-90 {
+  margin-bottom: 90px;
+}
+
+.mb-95 {
+  margin-bottom: 95px;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.container:after,
+.row:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+.container .grid-1,
+.container .grid-2,
+.container .grid-3,
+.container .grid-4,
+.container .grid-5,
+.container .grid-6,
+.container .grid-7,
+.container .grid-8,
+.container .grid-9,
+.container .grid-10,
+.container .grid-11,
+.container .grid-12 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
+}
+.container .grid-1 {
+  width: 6.53333%;
+}
+.container .grid-2 {
+  width: 14.86667%;
+}
+.container .grid-3 {
+  width: 23.2%;
+}
+.container .grid-4 {
+  width: 31.53333%;
+}
+.container .grid-5 {
+  width: 39.86667%;
+}
+.container .grid-6 {
+  width: 48.2%;
+}
+.container .grid-7 {
+  width: 56.53333%;
+}
+.container .grid-8 {
+  width: 64.86667%;
+}
+.container .grid-9 {
+  width: 73.2%;
+}
+.container .grid-10 {
+  width: 81.53333%;
+}
+.container .grid-11 {
+  width: 89.86667%;
+}
+.container .grid-12 {
+  width: 98.2%;
+}
+
+.btn {
+  background-color: #f9ac2b;
+  border: none;
+  color: white;
+  display: inline-block;
+  padding: 0.7em 1.5em 0.5em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+.btn:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+.btn.small {
+  font-size: 60%;
+  padding-top: 0.8em;
+  padding-bottom: 0.6em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+.btn.large {
+  font-size: 140%;
+  padding-top: 0.6em;
+  padding-bottom: 0.5em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+}
+.btn.x-large {
+  font-size: 200%;
+  padding-top: 0.5em;
+  padding-bottom: 0.4em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+.btn:hover {
+  color: white;
+}
+
+.icon {
+  font-family: "Entypo", "Entypo Social";
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  .container .grid-1,
+  .container .grid-2,
+  .container .grid-3,
+  .container .grid-4,
+  .container .grid-5,
+  .container .grid-6,
+  .container .grid-7,
+  .container .grid-8,
+  .container .grid-9,
+  .container .grid-10,
+  .container .grid-11,
+  .container .grid-12 {
+    margin-left: 1.25%;
+    margin-right: 1.25%;
+  }
+  .container .grid-1 {
+    width: 14.16667%;
+  }
+  .container .grid-2 {
+    width: 30.83333%;
+  }
+  .container .grid-3 {
+    width: 30.83333%;
+  }
+  .container .grid-4 {
+    width: 30.83333%;
+  }
+  .container .grid-5 {
+    width: 39.16667%;
+  }
+  .container .grid-6 {
+    width: 47.5%;
+  }
+  .container .grid-7 {
+    width: 55.83333%;
+  }
+  .container .grid-8 {
+    width: 64.16667%;
+  }
+  .container .grid-9 {
+    width: 64.16667%;
+  }
+  .container .grid-10 {
+    width: 64.16667%;
+  }
+  .container .grid-11 {
+    width: 80.83333%;
+  }
+  .container .grid-12 {
+    width: 97.5%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container {
+    max-width: 480px;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .container .grid-1,
+  .container .grid-2,
+  .container .grid-3,
+  .container .grid-4,
+  .container .grid-5,
+  .container .grid-6,
+  .container .grid-7,
+  .container .grid-8,
+  .container .grid-9,
+  .container .grid-10,
+  .container .grid-11,
+  .container .grid-12 {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .container .grid-1 {
+    width: 29.33333%;
+  }
+  .container .grid-2 {
+    width: 46%;
+  }
+  .container .grid-3 {
+    width: 96%;
+  }
+  .container .grid-4 {
+    width: 96%;
+  }
+  .container .grid-5 {
+    width: 96%;
+  }
+  .container .grid-6 {
+    width: 96%;
+  }
+  .container .grid-7 {
+    width: 96%;
+  }
+  .container .grid-8 {
+    width: 96%;
+  }
+  .container .grid-9 {
+    width: 96%;
+  }
+  .container .grid-10 {
+    width: 96%;
+  }
+  .container .grid-11 {
+    width: 96%;
+  }
+  .container .grid-12 {
+    width: 96%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+  .btn.small {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+  }
+  .btn.large {
+    font-size: 140%;
+    padding-top: 0.6em;
+    padding-bottom: 0.5em;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+  }
+  .btn.x-large {
+    font-size: 180%;
+    padding-top: 0.5em;
+    padding-bottom: 0.4em;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+  }
+  .btn:hover {
+    color: white;
+  }
+}
+/* Add your scss. */

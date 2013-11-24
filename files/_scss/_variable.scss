@@ -1,0 +1,45 @@
+// Width
+$width-pc: 960px;
+$width-tablet: 768px;
+$width-smartphone: 480px;
+
+
+// Font
+$font: Helvetica, Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+
+
+// Icon Font
+@include font-face(
+	'Entypo', 
+	font-files(
+		'entypo/entypo.woff', woff,
+		'entypo/entypo.ttf', ttf,
+		'entypo/entypo.svg', svg
+	),
+	'entypo/entypo.eot',
+	'normal',
+	'normal'
+);
+@include font-face(
+	'Entypo Social', 
+	font-files(
+		'entypo/entypo-social.woff', woff,
+		'entypo/entypo.ttf-social', ttf,
+		'entypo/entypo.svg-social', svg
+	),
+	'entypo/entypo.eot',
+	'normal',
+	'normal'
+);
+
+$iconfont: 'Entypo', 'Entypo Social';
+
+
+// Background Color
+$bgColor: #F5F5F5;
+
+
+// Color
+$color: #333;
+$color-inverse: #fff;
+$color-link: #f9ac2b;

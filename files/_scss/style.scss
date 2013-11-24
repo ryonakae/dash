@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+
+// Compass Import
+@import "compass";
+
+// Reset or Normalize
+// parameter: "compass/reset" / "_normalize"
+@import "_normalize";
+
+// Sass Import
+@import "_variable";
+@import "_mixin";
+@import "_dash";
+
+
+// Edit Area Start
+
+/* Add your scss. */
+
+// Edit Area End
+
+
+// Media Queries
+@import "_media-queries";
