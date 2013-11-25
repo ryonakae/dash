@@ -35,9 +35,21 @@ Compassの監視を開始するためのバッチファイルです。
 
 サイトの制作を開始するときはこいつをダブルクリックで起動すれば、config.rbで指定したディレクトリの監視が始まり、SCSS(SASS)の変更がある度にcssを自動でコンパイルしてくれます。
 
+#### Windows環境での\_compass_start.bat (2013-11-25)
+コマンドプロンプトにて「文字コードがおかしい」とか言われてコンパイル出来ない場合があります。  
+修正版の\_compass_start.batをコミットしたので大丈夫だと思いますが、もしダメなら[ここ](http://d.hatena.ne.jp/factal/20131011)とかを見ると良いと思います。
 
+\_compass_start.batに下記のように書いて保存→実行
 
-## Sass
+    set LANG=ja_JP.UTF-8
+    compass watch
+
+それでもダメなら
+
+    chcp 65001
+    compass w
+
+## SCSS
 
 基本的に、インポートしたいscssをstyle.cssに書けば、それがstyle.cssにコンパイルされます。
 
@@ -48,7 +60,7 @@ Compassの監視を開始するためのバッチファイルです。
     ┣ _variable.scss
     ┣ _mixin.scss
     ┣ _dash.scss
-    ┗ _media-queries.less
+    ┗ _media-queries.scss
 
 ### \_normalize.scss
 [normalize.css](http://necolas.github.io/normalize.css/)をSCSSに拡張子を変えたものです。
@@ -92,7 +104,7 @@ style.scssの7行目あたりに、
 このフレームワーク特有のあれこれが書いてあるSCSSです。
 
 #### 960 Grid System
-[960 Grid System](http://960.gs/)をレスポンシブ対応させたグリッドシステムを用意していますので、グリッドを使いたい場合は下記のように書いてください。
+[960 Grid System](http://960.gs/)をベースにして、レスポンシブ対応させたグリッドシステムを用意していますので、グリッドを使いたい場合は下記のように書いてください。
 
     <div class="container">
       <div class="grid-6">.grid-6</div>
@@ -118,7 +130,7 @@ style.scssの7行目あたりに、
     margin-bottom
     mb-5 〜 .mb-100 (margin-bottom:5px; 〜 margin-bottom:100px;)
     
-#### ボタン
+#### Button
 aタグなどに`.btn`を付与すると自動的にボタンになりますので、よければお使いください。  
 4つのサイズがあります。
 
