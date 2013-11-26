@@ -4,15 +4,20 @@ A simple and clean Sass/Compass-based framework
 
 [RYO NAKAE](http://brdr.jp)がWebサイトを作る時に使っているSass/Compassなテンプレートファイル一式を、少しだけ汎用的にしたシンプルなフレームワークです。
 
+
 ## Concept
 最近はSass/CompassでWebサイトの制作をしていますが、設置やら初期設定やらが面倒だったので、使いまわせるフレームワークというかテンプレートを用意するか、というのがコンセプトです。  
 そういう初期に活躍してくれるフレームワークということで、「スタートダッシュ」→「ダッシュ」→「DASH」という名前になりました。スタートダッシュが和製英語なんて知らなかった…。
+
+
 
 ## Features
 * シンプルで分厚くないフレームワーク
 * Sass/Compassベースで開発が楽、面倒な初期の設置もファイルのコピペだけでOK
 * グリッドやボタンなどの基本的なスタイルが最初から用意されている&レスポンシブ対応
 * アイコンフォント([Entypo](http://www.entypo.com/))が最初から用意されているのでアイコンを引っ張ってくる必要なし
+
+
 
 ## Usage
 
@@ -39,7 +44,8 @@ Compassの監視を開始するためのバッチファイルです。
 コマンドプロンプトにて「文字コードがおかしい」とか言われてコンパイル出来ない場合があります。  
 修正版の\_compass_start.batをコミットしたので大丈夫だと思いますが、もしダメなら[ここ](http://d.hatena.ne.jp/factal/20131011)とかを見ると良いと思います。
 
-\_compass_start.batに下記のように書いて保存→実行
+\_compass_start.batに下記のように書いて保存→実行  
+(コミットしてるbatファイルには既に書かれています)
 
     set LANG=ja_JP.UTF-8
     compass watch
@@ -48,6 +54,8 @@ Compassの監視を開始するためのバッチファイルです。
 
     chcp 65001
     compass w
+
+
 
 ## SCSS
 
@@ -65,7 +73,7 @@ Compassの監視を開始するためのバッチファイルです。
 ### \_normalize.scss
 [normalize.css](http://necolas.github.io/normalize.css/)をSCSSに拡張子を変えたものです。
 
-「ぶっちゃけnormalize.cssが使いにくい」という場合は、compassに内蔵されているCSS Resetを使ってください。
+「ぶっちゃけnormalize.cssが使いにくい」という場合は、[Compassに内蔵されているCSS Reset](http://compass-style.org/reference/compass/reset/)を使ってください。
 
 style.scssの7行目あたりに、
 
@@ -79,14 +87,10 @@ style.scssの7行目あたりに、
     // parameter: "compass/reset" / "_normalize"
     @import "compass/reset";
     
-にすればnormalizeではなくresetになります。
-
-余談ですが僕はresetの方をよく使いますが、ありとあらゆるスタイルをリセットしてしまうので、ぶっちゃけ記述量はresetしない時より増えるから色々面倒だなとかは思っています。
-
+にすればNormalizeではなくResetになります。
 
 ### \_variable.scss
 変数を格納したSCSSです。変数を使いたい場合はここに書くと良いです。
-
 
 ### \_mixin.scss
 僕が比較的よく使うmixinをまとめてあります。ご自身でmixinを作られる場合はここに書くと良いです。  
@@ -98,7 +102,6 @@ style.scssの7行目あたりに、
 |@include textHide;|テキストの画像置換|
 |@include hoverEffect($speed, $opacity);|マウスオーバーでアニメーション(CSS3)しながら半透明になります|
 |@include gradient($direction, $lighten, $color, $percent);|要素の背景をグラデーションで塗りたい時に使えます|
-
 
 ### \_dash.css
 このフレームワーク特有のあれこれが書いてあるSCSSです。
@@ -139,7 +142,6 @@ aタグなどに`.btn`を付与すると自動的にボタンになりますの�
     .btn.large   …大きいボタン
     .btn.x-large …超大きいボタン
 
-
 ### _media-queries.scss
 Media Queries用のスタイルを記述します。  
 僕は要素ごとに`@media`を書く人なので本来これは使用しませんが、こうやってファイルを分けないとフレームワークっぽくならないのでこうしました。が、この書き方もそこまで不便ではなかったのでこれからはこの書き方に変えてもいいかも知れません。
@@ -153,12 +155,80 @@ Media Queries用のスタイルを記述します。
 
 ちなみにスタイルを切り替えるブレークポイントとなる横幅ですが、_variable.scssの一番上に書いてあります。
 
-   
+
+
+## Facebook OGP & Twitter Meta
+Facebook OGPとTwitter Meta用のmetaタグが最初から用意されているので空欄を埋めるだけでFacebook/Twitterに最適化できます。
+
+### Facebook OGP
+
+    <meta property="fb:admins" content="FacebookアプリのID">
+    <meta property="fb:app_id" content="FacebookのユーザーID">
+    <meta property="og:url" content="ページのURL">
+    <meta property="og:type" content="サイトの種類">
+    <meta property="og:title" content="ページのタイトル">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="画像のURL">
+    <meta property="og:description" content="ページの説明">
+    <meta property="og:site_name" content="サイトのタイトル">
+    <meta property="article:publisher" content="FacebookページのURL">
+
+#### fb:admins & fb:app_id
+これは**どちらかだけ**を記述すれば良いです。  
+[FacebookアプリのIDを調べる場合はこちら](https://developers.facebook.com/apps)  
+[FacebookのユーザーIDを調べる場合はこちら](http://biz.comlog.jp/manual2/20400.html)
+
+#### og:type
+og:typeの一覧は[ここ](http://www.inventory.co.jp/labo/facebook/facebook-open-graph-protocol-ogtype.html)とかを見れば良いです。  
+ほとんどの場合は`article`か`blog`か`website`だと思います。`blog`と`website`はブログ/サイトのトップページ、下層ページは`article`です。
+
+#### og:image
+サイトがシェアされた時に表示されるサムネイル的な画像です。いい感じの画像を用意してください。  
+**URLは絶対パスで書く必要があります。**  
+画像の大きさは、[ここ](http://snowadays.jp/2013/09/2106)とかを見れば良いです。(多分500x500px以上なら問題なし)
+
+#### article:publisher
+投稿がシェアされてタイムラインに載った時、Facebookページのフォローボタンが表示されます。FacebookページのURLを入力して下さい。  
+**og:typeが`article`じゃないとエラーが出ます。** ("article":publisherだから)  
+Facebookページではなく個人アカウントの場合は、`article:author`にすれば良いです。
+
+#### URL Linter
+[URL Linter - Facebook Developers](https://developers.facebook.com/tools/debug)
+
+入力が済んだらURL Linterでデバッグして下さい。エラーが出なければOK、出たらおかしい箇所を直して再デバッグ。
+
+### Twitter Meta
+
+    <meta name="twitter:site" value="サイトのTwitterアカウント(@付き)">
+    <meta name="twitter:creator" value="投稿者のTwitterアカウント(@付き)">
+    <meta name="twitter:url" value="ページのURL">
+    <meta name="twitter:card" value="投稿の種類">
+    <meta name="twitter:title" value="ページのタイトル">
+    <meta name="twitter:image" value="画像のURL">
+    <meta name="twitter:description" value="ページの説明">
+
+#### twitter:site & twitter:creator
+これは**どちらかだけ**を記述すれば良いです。  
+`@ryo_dg`のように@付きのTwitterのユーザーIDを入力して下さい。
+
+#### twitter:card
+表示スタイルの種類です。  
+[ここ](https://dev.twitter.com/docs/cards/validation/validator)に飛ぶとどんな種類があるのか分かります。ほとんどの場合は`summary`か`summary_large_image`で良いと思います。
+
+#### twitter:image
+タイムラインに表示される画像です。ほとんどの場合、FacebookのOGP画像と同じで良いと思います。
+
+#### Twitter Cardsの申請
+**Facebook OGPと違って申請が必要です。**  
+[ここ](https://dev.twitter.com/docs/cards/validation/validator)から申請してください。運が良いとすぐ申請が通ります。
+
+
 
 ## Changelog
 ### 1.0 (2013-11-25)
 
 * 公開
+
 
 
 ## License
