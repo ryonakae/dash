@@ -8,18 +8,16 @@
 // parameter: "compass/reset" / "_normalize"
 @import "_normalize";
 
+// Icon Font Import
+@import "_fontello-entypo";
+
 // Sass Import
 @import "_variable";
 @import "_mixin";
 @import "_dash";
 
-
-// Edit Area Start
-
-/* Add your scss. */
-
-// Edit Area End
-
+// User Custom SCSS
+@import "_user";
 
 // Media Queries
 @import "_media-queries";

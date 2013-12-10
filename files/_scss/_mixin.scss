@@ -57,14 +57,29 @@
 
 
 // Media Queries
+@mixin mediaquery-pc {
+  @media only screen and (min-width: $width-tablet + 20 + 1) {
+    @content;
+  }
+}
+
 @mixin mediaquery-tablet {
-  @media only screen and (min-width: $width-smartphone + 1) and (max-width: $width-tablet) {
+  @media only screen and (min-width: $width-smartphone + 20 + 1) and (max-width: $width-tablet + 20) {
     @content;
   }
 }
 
 @mixin mediaquery-smartphone {
-  @media only screen and (max-width: $width-smartphone) {
+  @media only screen and (max-width: $width-smartphone + 20) {
     @content;
   }
+}
+
+
+// Inline Block;
+@mixin inline-block {
+  display: inline-block;
+  vertical-align: top;
+  *display: inline; /* IE7 */
+  *zoom: 1; /* IE7 */
 }
