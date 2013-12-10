@@ -214,6 +214,9 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
+#User Settings
+#.gitignore
+.gitignore
 
 #sass-chache
 .sass-cache
