@@ -378,11 +378,11 @@ table {
 }
 
 @font-face {
-  font-family: 'fontello-entypo';
-  src: url("../font/fontello-entypo.eot?746683");
-  src: url("../font/fontello-entypo.eot?746683#iefix") format("embedded-opentype"), url("../font/fontello-entypo.woff?746683") format("woff"), url("../font/fontello-entypo.ttf?746683") format("truetype"), url("../font/fontello-entypo.svg?746683#fontello") format("svg");
-  font-weight: normal;
-  font-style: normal;
+  font-family: "fontello-entypo";
+  src: url('font/fontello-entypo/fontello-entypo.eot');
+  src: url('font/fontello-entypo/fontello-entypo.eot?#iefix') format('eot'), url('font/fontello-entypo/fontello-entypo.woff') format('woff'), url('font/fontello-entypo/fontello-entypo.ttf') format('truetype'), url('font/fontello-entypo/fontello-entypo.svg') format('svg');
+  font-weight: "normal";
+  font-style: "normal";
 }
 
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
