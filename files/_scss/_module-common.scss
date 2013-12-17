@@ -1,0 +1,42 @@
+// Common
+* {
+  @include box-sizing(border-box);
+}
+
+body {
+  background: $bgColor;
+  color: $color;
+  font-family: $font;
+  font-size: 100%;
+  
+  // Text Highlight
+  ::selection {
+    background: $color-link;
+    color: $color-inverse;
+  }
+}
+
+a {
+  color: $color-link;
+  cursor: pointer;
+  text-decoration: underline;
+  
+  &:hover {
+    text-decoration: none;
+    color: lighten($color-link, 20%);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // for CSS Reset
+  // font-weight: bold;
+
+  a {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,71 @@
+// Button
+.btn {
+  background-color: $color-link;
+  border: none;
+  color: $color-inverse;
+  display: inline-block;
+  padding: 0.7em 1.5em 0.5em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  @include border-radius(5px);
+  @include hoverEffect;
+  
+  &.small {
+    font-size: 60%;
+    padding-top: 0.8em;
+    padding-bottom: 0.6em;
+    @include border-radius(3px);
+  }
+  
+  &.large {
+    font-size: 140%;
+    padding-top: 0.6em;
+    padding-bottom: 0.5em;
+    @include border-radius(8px);
+  }
+  
+  &.x-large {
+    font-size: 200%;
+    padding-top: 0.5em;
+    padding-bottom: 0.4em;
+    @include border-radius(10px);
+  }
+  
+  &:hover {
+    color: $color-inverse;
+  }
+}
+
+
+// Tablet
+@include mediaquery-tablet {
+}
+
+// SmartPhone
+@include mediaquery-smartphone {
+  .btn {
+    width: 100%;
+    
+    &.small {
+      @include border-radius(5px);
+    }
+    
+    &.large {
+      font-size: 140%;
+      padding-top: 0.6em;
+      padding-bottom: 0.5em;
+      @include border-radius(8px);
+    }
+    
+    &.x-large {
+      font-size: 180%;
+      padding-top: 0.5em;
+      padding-bottom: 0.4em;
+      @include border-radius(10px);
+    }
+    
+    &:hover {
+      color: $color-inverse;
+    }
+  }
+}
