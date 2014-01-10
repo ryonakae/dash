@@ -1851,6 +1851,7 @@ body {
   color: #333333;
   font-family: Helvetica, Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
   font-size: 100%;
+  line-height: 1.8;
 }
 body ::selection {
   background: #f9ac2b;
@@ -1895,347 +1896,453 @@ h6 a {
 }
 
 .mt-5 {
-  margin-top: 5px;
+  margin-top: 5px !important;
 }
 
 .mt-10 {
-  margin-top: 10px;
+  margin-top: 10px !important;
 }
 
 .mt-15 {
-  margin-top: 15px;
+  margin-top: 15px !important;
 }
 
 .mt-20 {
-  margin-top: 20px;
+  margin-top: 20px !important;
 }
 
 .mt-25 {
-  margin-top: 25px;
+  margin-top: 25px !important;
 }
 
 .mt-30 {
-  margin-top: 30px;
+  margin-top: 30px !important;
 }
 
 .mt-35 {
-  margin-top: 35px;
+  margin-top: 35px !important;
 }
 
 .mt-40 {
-  margin-top: 40px;
+  margin-top: 40px !important;
 }
 
 .mt-45 {
-  margin-top: 45px;
+  margin-top: 45px !important;
 }
 
 .mt-50 {
-  margin-top: 50px;
+  margin-top: 50px !important;
 }
 
 .mt-55 {
-  margin-top: 55px;
+  margin-top: 55px !important;
 }
 
 .mt-60 {
-  margin-top: 60px;
+  margin-top: 60px !important;
 }
 
 .mt-65 {
-  margin-top: 65px;
+  margin-top: 65px !important;
 }
 
 .mt-70 {
-  margin-top: 79px;
+  margin-top: 79px !important;
 }
 
 .mt-75 {
-  margin-top: 75px;
+  margin-top: 75px !important;
 }
 
 .mt-80 {
-  margin-top: 80px;
+  margin-top: 80px !important;
 }
 
 .mt-85 {
-  margin-top: 85px;
+  margin-top: 85px !important;
 }
 
 .mt-90 {
-  margin-top: 90px;
+  margin-top: 90px !important;
 }
 
 .mt-95 {
-  margin-top: 95px;
+  margin-top: 95px !important;
 }
 
 .mt-100 {
-  margin-top: 100px;
+  margin-top: 100px !important;
 }
 
 .mb-5 {
-  margin-bottom: 5px;
+  margin-bottom: 5px !important;
 }
 
 .mb-10 {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 
 .mb-15 {
-  margin-bottom: 15px;
+  margin-bottom: 15px !important;
 }
 
 .mb-20 {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 
 .mb-25 {
-  margin-bottom: 25px;
+  margin-bottom: 25px !important;
 }
 
 .mb-30 {
-  margin-bottom: 30px;
+  margin-bottom: 30px !important;
 }
 
 .mb-35 {
-  margin-bottom: 35px;
+  margin-bottom: 35px !important;
 }
 
 .mb-40 {
-  margin-bottom: 40px;
+  margin-bottom: 40px !important;
 }
 
 .mb-45 {
-  margin-bottom: 45px;
+  margin-bottom: 45px !important;
 }
 
 .mb-50 {
-  margin-bottom: 50px;
+  margin-bottom: 50px !important;
 }
 
 .mb-55 {
-  margin-bottom: 55px;
+  margin-bottom: 55px !important;
 }
 
 .mb-60 {
-  margin-bottom: 60px;
+  margin-bottom: 60px !important;
 }
 
 .mb-65 {
-  margin-bottom: 65px;
+  margin-bottom: 65px !important;
 }
 
 .mb-70 {
-  margin-bottom: 70px;
+  margin-bottom: 70px !important;
 }
 
 .mb-75 {
-  margin-bottom: 75px;
+  margin-bottom: 75px !important;
 }
 
 .mb-80 {
-  margin-bottom: 80px;
+  margin-bottom: 80px !important;
 }
 
 .mb-85 {
-  margin-bottom: 85px;
+  margin-bottom: 85px !important;
 }
 
 .mb-90 {
-  margin-bottom: 90px;
+  margin-bottom: 90px !important;
 }
 
 .mb-95 {
-  margin-bottom: 95px;
+  margin-bottom: 95px !important;
 }
 
 .mb-100 {
-  margin-bottom: 100px;
+  margin-bottom: 100px !important;
 }
 
 .container {
   margin-left: auto;
   margin-right: auto;
   max-width: 960px;
-  padding-left: 1%;
-  padding-right: 1%;
+  padding-left: 30px;
+  padding-right: 30px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
 .container:after {
   clear: both;
   content: "";
   display: block;
 }
-.container .grid-1,
-.container .grid-2,
-.container .grid-3,
-.container .grid-4,
-.container .grid-5,
-.container .grid-6,
-.container .grid-7,
-.container .grid-8,
-.container .grid-9,
-.container .grid-10,
-.container .grid-11,
-.container .grid-12 {
+.container .row {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+.container .row:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.container .row .column-1 {
   float: left;
   margin-left: 0.9%;
   margin-right: 0.9%;
-}
-.container .grid-1 {
   width: 6.53333%;
 }
-.container .grid-2 {
+.container .row .column-1.right {
+  float: right;
+}
+.container .row .column-2 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
   width: 14.86667%;
 }
-.container .grid-3 {
+.container .row .column-2.right {
+  float: right;
+}
+.container .row .column-3 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
   width: 23.2%;
 }
-.container .grid-4 {
+.container .row .column-3.right {
+  float: right;
+}
+.container .row .column-4 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
   width: 31.53333%;
 }
-.container .grid-5 {
+.container .row .column-4.right {
+  float: right;
+}
+.container .row .column-5 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
   width: 39.86667%;
 }
-.container .grid-6 {
+.container .row .column-5.right {
+  float: right;
+}
+.container .row .column-6 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
   width: 48.2%;
 }
-.container .grid-7 {
+.container .row .column-6.right {
+  float: right;
+}
+.container .row .column-7 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
   width: 56.53333%;
 }
-.container .grid-8 {
+.container .row .column-7.right {
+  float: right;
+}
+.container .row .column-8 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
   width: 64.86667%;
 }
-.container .grid-9 {
+.container .row .column-8.right {
+  float: right;
+}
+.container .row .column-9 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
   width: 73.2%;
 }
-.container .grid-10 {
+.container .row .column-9.right {
+  float: right;
+}
+.container .row .column-10 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
   width: 81.53333%;
 }
-.container .grid-11 {
+.container .row .column-10.right {
+  float: right;
+}
+.container .row .column-11 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
   width: 89.86667%;
 }
-.container .grid-12 {
+.container .row .column-11.right {
+  float: right;
+}
+.container .row .column-12 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
   width: 98.2%;
 }
-.container .clear {
-  clear: both;
+.container .row .column-12.right {
+  float: right;
 }
 
-@media only screen and (min-width: 788px) and (max-width: 979px) {
+@media only screen and (min-width: 500px) and (max-width: 787px) {
   .container {
     max-width: 768px;
-    padding-left: 2%;
-    padding-right: 2%;
   }
-  .container .grid-1,
-  .container .grid-2,
-  .container .grid-3,
-  .container .grid-4,
-  .container .grid-5,
-  .container .grid-6,
-  .container .grid-7,
-  .container .grid-8,
-  .container .grid-9,
-  .container .grid-10,
-  .container .grid-11,
-  .container .grid-12 {
+  .container .row .column-1 {
+    float: left;
     margin-left: 1.25%;
     margin-right: 1.25%;
+    width: 5.83333%;
   }
-  .container .grid-1 {
+  .container .row .column-2 {
+    float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
     width: 14.16667%;
   }
-  .container .grid-2 {
+  .container .row .column-3 {
+    float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
+    width: 22.5%;
+  }
+  .container .row .column-4 {
+    float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
     width: 30.83333%;
   }
-  .container .grid-3 {
-    width: 30.83333%;
-  }
-  .container .grid-4 {
-    width: 30.83333%;
-  }
-  .container .grid-5 {
+  .container .row .column-5 {
+    float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
     width: 39.16667%;
   }
-  .container .grid-6 {
+  .container .row .column-6 {
+    float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
     width: 47.5%;
   }
-  .container .grid-7 {
+  .container .row .column-7 {
+    float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
     width: 55.83333%;
   }
-  .container .grid-8 {
+  .container .row .column-8 {
+    float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
     width: 64.16667%;
   }
-  .container .grid-9 {
-    width: 64.16667%;
+  .container .row .column-9 {
+    float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
+    width: 72.5%;
   }
-  .container .grid-10 {
-    width: 64.16667%;
-  }
-  .container .grid-11 {
+  .container .row .column-10 {
+    float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
     width: 80.83333%;
   }
-  .container .grid-12 {
+  .container .row .column-11 {
+    float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
+    width: 89.16667%;
+  }
+  .container .row .column-12 {
+    float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
     width: 97.5%;
   }
 }
-@media only screen and (max-width: 787px) {
+@media only screen and (max-width: 499px) {
   .container {
     max-width: 480px;
     padding-left: 3%;
     padding-right: 3%;
   }
-  .container .grid-1,
-  .container .grid-2,
-  .container .grid-3,
-  .container .grid-4,
-  .container .grid-5,
-  .container .grid-6,
-  .container .grid-7,
-  .container .grid-8,
-  .container .grid-9,
-  .container .grid-10,
-  .container .grid-11,
-  .container .grid-12 {
-    margin-left: 2%;
-    margin-right: 2%;
+  .container .row .column-1 {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
-  .container .grid-1 {
-    width: 29.33333%;
+  .container .row .column-2 {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
-  .container .grid-2 {
-    width: 46%;
+  .container .row .column-3 {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
-  .container .grid-3 {
-    width: 96%;
+  .container .row .column-4 {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
-  .container .grid-4 {
-    width: 96%;
+  .container .row .column-5 {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
-  .container .grid-5 {
-    width: 96%;
+  .container .row .column-6 {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
-  .container .grid-6 {
-    width: 96%;
+  .container .row .column-7 {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
-  .container .grid-7 {
-    width: 96%;
+  .container .row .column-8 {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
-  .container .grid-8 {
-    width: 96%;
+  .container .row .column-9 {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
-  .container .grid-9 {
-    width: 96%;
+  .container .row .column-10 {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
-  .container .grid-10 {
-    width: 96%;
+  .container .row .column-11 {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
-  .container .grid-11 {
-    width: 96%;
-  }
-  .container .grid-12 {
-    width: 96%;
+  .container .row .column-12 {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
 }
 .btn {
@@ -2298,7 +2405,7 @@ h6 a {
   color: white;
 }
 
-@media only screen and (max-width: 787px) {
+@media only screen and (max-width: 499px) {
   .btn {
     width: 100%;
   }

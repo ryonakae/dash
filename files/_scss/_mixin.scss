@@ -58,19 +58,19 @@
 
 // Media Queries
 @mixin mediaquery-pc {
-  @media only screen and (min-width: $width-pc + 20) {
+  @media only screen and (min-width: $width-tablet + $width-scrollbar) {
     @content;
   }
 }
 
 @mixin mediaquery-tablet {
-  @media only screen and (min-width: $width-tablet + 20) and (max-width: $width-pc + 20 - 1) {
+  @media only screen and (min-width: $width-smartphone + $width-scrollbar) and (max-width: $width-tablet + $width-scrollbar - 1) {
     @content;
   }
 }
 
 @mixin mediaquery-smartphone {
-  @media only screen and (max-width: $width-tablet + 20 - 1) {
+  @media only screen and (max-width: $width-smartphone + $width-scrollbar - 1) {
     @content;
   }
 }
@@ -83,3 +83,20 @@
   *display: inline; /* IE7 */
   *zoom: 1; /* IE7 */
 }
+
+
+// BEM (Require Sass 3.3)
+/*
+// Element
+@mixin e($name) {
+  @at-root #{&}__#{$name} {
+    @content;
+  }
+}
+// Modifier
+@mixin m($name) {
+  @at-root #{&}--#{$name} {
+    @content;
+  }
+}
+*/

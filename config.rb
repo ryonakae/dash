@@ -18,3 +18,6 @@ relative_assets = true
 
 # Define SCSS or SASS
 # preferred_syntax = :scss
+
+# Disable .sass-cache
+cache = false
