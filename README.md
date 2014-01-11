@@ -5,24 +5,24 @@ A simple and clean Sass/Compass-based framework
 [RYO NAKAE](http://brdr.jp)がWebサイトを作る時に使っているSass/Compassなテンプレートファイル一式を、少しだけ汎用的にしたシンプルなフレームワークです。
 
 
-## Concept
-### 名前の由来
-~~最近はSass/CompassでWebサイトの制作をしていますが、設置やら初期設定やらが面倒だったので、使いまわせるフレームワークというかテンプレートを用意するか、というのがコンセプトです。~~  
-~~そういう初期に活躍してくれるフレームワークということで、「スタートダッシュ」→「ダッシュ」→「DASH」という名前になりました。スタートダッシュが和製英語なんて知らなかった…。~~
+## Concept / 名前の由来
+~~最近はSass/CompassでWebサイトの制作をしていますが、設置やら初期設定やらが面倒だったので、使いまわせるフレームワークというかテンプレートを用意するか、というのがコンセプトです。  
+そういう初期に活躍してくれるフレームワークということで、「スタートダッシュ」→「ダッシュ」→「DASH」という名前になりました。~~
 
-**[名前の由来が変わりました](https://www.google.co.jp/search?q=%E3%82%B9%E3%82%B9%E3%83%A1%E2%86%92%E3%83%88%E3%82%A5%E3%83%A2%E3%83%AD%E3%82%A6/START:DASH!!&espv=210&es_sm=122&source=lnms&tbm=isch&sa=X&ei=wuSmUqSqM8LfkAXk_IHICg&ved=0CAcQ_AUoAQ&biw=1111&bih=899)**
-
+**[名前の由来が変わりました](https://www.google.co.jp/search?q=start+dash+%E3%83%A9%E3%83%96%E3%83%A9%E3%82%A4%E3%83%96&espv=210&es_sm=122&source=lnms&tbm=isch&sa=X&ei=z9vQUub3DYfTkwXFvIHwAw&ved=0CAkQ_AUoAQ&biw=1239&bih=925#es_sm=122&espv=210&q=No+brand+girls%2FSTART:DASH!!&tbm=isch&imgdii=_)**
 
 
-## Features
+
+## Features / 特長
 * シンプルで分厚くないフレームワーク
 * Sass/Compassベースで開発が楽、面倒な初期の設置もファイルのコピペだけでOK
+* [Grunt](http://gruntjs.com/)での開発もすぐ始められるように設定ファイル等を用意
 * グリッドやボタンなどの基本的なスタイルが最初から用意されている&レスポンシブ対応
 * アイコンフォント([Entypo](http://www.entypo.com/))が最初から用意されているのでアイコンを引っ張ってくる必要なし
 
 
 
-## Usage
+## Usage / 使い方
 
 ### Download
 [ダウンロード](https://github.com/ryonakae/dash/archive/master.zip)
@@ -31,11 +31,12 @@ A simple and clean Sass/Compass-based framework
 SassとCompassがお使いのPC/Macにインストールされていることが前提です。  
 [ここ](http://ajike.co.jp/switch/sass_compass/)とかを見れば良いと思います。
 
-### config.rb
+### Sass/Compass
+#### config.rb
 Compassの設定ファイルです。  
 これを弄ればディレクトリ構造やCSSの出力スタイルを変更できます。
 
-### \_compass_start
+#### \_compass_start
 Compassの監視を開始するためのバッチファイルです。  
 
 * \_compass_start.bat (Windows用)
@@ -43,40 +44,65 @@ Compassの監視を開始するためのバッチファイルです。
 
 サイトの制作を開始するときはこいつをダブルクリックで起動すれば、config.rbで指定したディレクトリの監視が始まり、SCSS(SASS)の変更がある度にcssを自動でコンパイルしてくれます。
 
-#### Windows環境での\_compass_start.bat (2013-11-25)
-コマンドプロンプトにて「文字コードがおかしい」とか言われてコンパイル出来ない場合があります。  
-修正版の\_compass_start.batをコミットしたので大丈夫だと思いますが、もしダメなら[ここ](http://d.hatena.ne.jp/factal/20131011)とかを見ると良いと思います。
+### Grunt
+Gruntを使えば、CSSのコンパイルやJSの圧縮などを自動化できます。  
+PCにGrunt環境が構築されていることが前提です。
 
-\_compass_start.batに下記のように書いて保存→実行  
-(コミットしてるbatファイルには既に書かれています)
+#### Grunt用ファイル
+* package.json  
+  プロジェクトの設定ファイル
+* Gruntfile.js  
+  gruntコマンドで実行するタスクの設定ファイル
+* _grunt-install.bat, _grunt-install.command  
+  gruntのプラグイン(モジュール)をインストールするためのバッチファイル(Windows用, Mac用)
+* _grunt-start.bat, _grunt-start.command  
+  gruntコマンドを実行するためのバッチファイル(Windows用, Mac用)
 
-    set LANG=ja_JP.UTF-8
-    compass watch
+_grunt-startを実行するとgruntコマンドが実行され、ディレクトリの監視が始まります。
 
-それでもダメなら
+#### この設定ファイルでできること
+* Sass/Compassのコンパイル
+* ブラウザの自動リロード
 
-    chcp 65001
-    compass w
+を実行してくれます。その他のタスクを実行したい場合は、package.jsonとGruntfile.jsに適宜追記して下さい。
 
+#### ブラウザの自動リロード
+ファイル保存時にブラウザを自動リロードしてくれます。  
+各ブラウザに自動リロード用の拡張機能をインストールする必要があります。例えばChrome用は[これ](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)です。
 
 
 ## SCSS
-基本的に、インポートしたいscssをstyle.cssに書けば、それがstyle.cssにコンパイルされます。  
-構成は下記のとおりです。
+基本的に、インポートしたいscssをstyle.scssに書けば、それがstyle.cssにコンパイルされます。
 
-    style.scss
-    ┣ _normalize.scss
-    ┣ _variable.scss
-    ┣ _mixin.scss
-    ┣ _dash.scss
-    ┣ _user.scss
-    ┣ _media-queries.scss
-    ┗ fontello-entypo
-        ┣ _fontello.scss
-        ┣ (_fontello-codes.scss)
-        ┣ (_fontello-embedded.scss)
-        ┣ (_fontello-ie7.scss)
-        ┗ (_fontello-ie7-codes.scss)
+### ファイル構成
+ファイル構成は下記のとおりです。
+
+    [project]
+     ├[files]
+     │ ├[_scss]
+     │ │ ├[module]
+     │ │ │ ├[fontello-entypo]
+     │ │ │ ├_module__button.scss
+     │ │ │ ├_module__common.scss
+     │ │ │ ├_module__gridsystem.scss
+     │ │ │ ├_module__iconfont.scss
+     │ │ │ ├_module__margin.scss
+     │ │ │ └_module__textalign.scss
+     │ │ ├_media-queries.scss
+     │ │ ├_mixin.scss
+     │ │ ├_media-queries.scss
+     │ │ ├_normalize.scss
+     │ │ ├_user.scss
+     │ │ ├_variable.scss
+     │ │ └style.scss
+     │ ├[font]
+     │ ├[js]
+     │ ├index.html
+     │ └style.css
+     ├[node_modules]
+     ├config.rb
+     ├Gruntfile.js
+     └package.json
 
 ### \_normalize.scss
 [normalize.css](http://necolas.github.io/normalize.css/)をSCSSに拡張子を変えたものです。
@@ -97,10 +123,6 @@ style.scssの7行目あたりに、
     
 にすればNormalizeではなくResetになります。
 
-### \_fontello-entypo.scss
-アイコンフォントを読み込んだりするscssです。普通の[Entypo](http://www.entypo.com/)から、[Fontello](http://fontello.com/)で生成したEntypoに変更しました(2013-12-10)。  
-IE7に対応させたい場合は、\_fontello-entypo.scssにて`// @import "fontello-entypo/_fontello-ie7";`のコメントアウトを解除してください。
-
 ### \_variable.scss
 変数を格納したSCSSです。変数を使いたい場合はここに書くと良いです。
 
@@ -116,9 +138,15 @@ IE7に対応させたい場合は、\_fontello-entypo.scssにて`// @import "fon
 | @include gradient($direction, $lighten, $color, $percent); | 要素の背景をグラデーションで塗りたい時に使えます |
 | @include inline-block | IE7に対応したdisplay: inline-block;が入ります |
 
-### \_dash.css
-このフレームワーク特有のあれこれが書いてあるSCSSです。  
-**できれば編集せずにお使い下さい**(あちこちで不具合が出る可能性があります)。
+### \_user.scss
+ここに各自スタイルを書いていくことができます。
+
+### module
+便利なSCSSが用意されていてもこのサイトでは使わない、というニーズに応えたモジュール式SCSSです。個別に`@import`するかしないかをstyle.scssに記述し、必要なスタイルだけを読み込みます。
+
+### \_fontello-entypo.scss
+アイコンフォントを読み込んだりするscssです。普通の[Entypo](http://www.entypo.com/)から、[Fontello](http://fontello.com/)で生成したEntypoに変更しました(2013-12-10)。  
+IE7に対応させたい場合は、\_fontello-entypo.scssにて`// @import "fontello-entypo/_fontello-ie7";`のコメントアウトを解除してください。
 
 #### 960 Grid System
 [960 Grid System](http://960.gs/)をベースにして、レスポンシブ対応させたグリッドシステムを用意していますので、グリッドを使いたい場合は下記のように書いてください。
