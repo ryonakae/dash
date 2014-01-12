@@ -5,24 +5,24 @@ A simple and clean Sass/Compass-based framework
 [RYO NAKAE](http://brdr.jp)がWebサイトを作る時に使っているSass/Compassなテンプレートファイル一式を、少しだけ汎用的にしたシンプルなフレームワークです。
 
 
-## Concept
-### 名前の由来
-~~最近はSass/CompassでWebサイトの制作をしていますが、設置やら初期設定やらが面倒だったので、使いまわせるフレームワークというかテンプレートを用意するか、というのがコンセプトです。~~  
-~~そういう初期に活躍してくれるフレームワークということで、「スタートダッシュ」→「ダッシュ」→「DASH」という名前になりました。スタートダッシュが和製英語なんて知らなかった…。~~
+## Concept / 名前の由来
+~~最近はSass/CompassでWebサイトの制作をしていますが、設置やら初期設定やらが面倒だったので、使いまわせるフレームワークというかテンプレートを用意するか、というのがコンセプトです。  
+そういう初期に活躍してくれるフレームワークということで、「スタートダッシュ」→「ダッシュ」→「DASH」という名前になりました。~~
 
-**[名前の由来が変わりました](https://www.google.co.jp/search?q=%E3%82%B9%E3%82%B9%E3%83%A1%E2%86%92%E3%83%88%E3%82%A5%E3%83%A2%E3%83%AD%E3%82%A6/START:DASH!!&espv=210&es_sm=122&source=lnms&tbm=isch&sa=X&ei=wuSmUqSqM8LfkAXk_IHICg&ved=0CAcQ_AUoAQ&biw=1111&bih=899)**
-
+**[名前の由来が変わりました](https://www.google.co.jp/search?q=start+dash+%E3%83%A9%E3%83%96%E3%83%A9%E3%82%A4%E3%83%96&espv=210&es_sm=122&source=lnms&tbm=isch&sa=X&ei=z9vQUub3DYfTkwXFvIHwAw&ved=0CAkQ_AUoAQ&biw=1239&bih=925#es_sm=122&espv=210&q=No+brand+girls%2FSTART:DASH!!&tbm=isch&imgdii=_)**
 
 
-## Features
+
+## Features / 特長
 * シンプルで分厚くないフレームワーク
 * Sass/Compassベースで開発が楽、面倒な初期の設置もファイルのコピペだけでOK
+* [Grunt](http://gruntjs.com/)での開発もすぐ始められるように設定ファイル等を用意
 * グリッドやボタンなどの基本的なスタイルが最初から用意されている&レスポンシブ対応
 * アイコンフォント([Entypo](http://www.entypo.com/))が最初から用意されているのでアイコンを引っ張ってくる必要なし
 
 
 
-## Usage
+## Usage / 使い方
 
 ### Download
 [ダウンロード](https://github.com/ryonakae/dash/archive/master.zip)
@@ -31,11 +31,12 @@ A simple and clean Sass/Compass-based framework
 SassとCompassがお使いのPC/Macにインストールされていることが前提です。  
 [ここ](http://ajike.co.jp/switch/sass_compass/)とかを見れば良いと思います。
 
-### config.rb
+### Sass/Compass
+#### config.rb
 Compassの設定ファイルです。  
 これを弄ればディレクトリ構造やCSSの出力スタイルを変更できます。
 
-### \_compass_start
+#### \_compass_start
 Compassの監視を開始するためのバッチファイルです。  
 
 * \_compass_start.bat (Windows用)
@@ -43,40 +44,65 @@ Compassの監視を開始するためのバッチファイルです。
 
 サイトの制作を開始するときはこいつをダブルクリックで起動すれば、config.rbで指定したディレクトリの監視が始まり、SCSS(SASS)の変更がある度にcssを自動でコンパイルしてくれます。
 
-#### Windows環境での\_compass_start.bat (2013-11-25)
-コマンドプロンプトにて「文字コードがおかしい」とか言われてコンパイル出来ない場合があります。  
-修正版の\_compass_start.batをコミットしたので大丈夫だと思いますが、もしダメなら[ここ](http://d.hatena.ne.jp/factal/20131011)とかを見ると良いと思います。
+### Grunt
+Gruntを使えば、CSSのコンパイルやJSの圧縮などを自動化できます。  
+PCにGrunt環境が構築されていることが前提です。
 
-\_compass_start.batに下記のように書いて保存→実行  
-(コミットしてるbatファイルには既に書かれています)
+#### Grunt用ファイル
+* package.json  
+  プロジェクトの設定ファイル
+* Gruntfile.js  
+  gruntコマンドで実行するタスクの設定ファイル
+* _grunt-install.bat, _grunt-install.command  
+  gruntのプラグイン(モジュール)をインストールするためのバッチファイル(Windows用, Mac用)
+* _grunt-start.bat, _grunt-start.command  
+  gruntコマンドを実行するためのバッチファイル(Windows用, Mac用)
 
-    set LANG=ja_JP.UTF-8
-    compass watch
+_grunt-startを実行するとgruntコマンドが実行され、ディレクトリの監視が始まります。
 
-それでもダメなら
+#### この設定ファイルでできること
+* Sass/Compassのコンパイル
+* ブラウザの自動リロード
 
-    chcp 65001
-    compass w
+を実行してくれます。その他のタスクを実行したい場合は、package.jsonとGruntfile.jsに適宜追記して下さい。
 
+#### ブラウザの自動リロード
+ファイル保存時にブラウザを自動リロードしてくれます。  
+各ブラウザに自動リロード用の拡張機能をインストールする必要があります。例えばChrome用は[これ](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)です。
 
 
 ## SCSS
-基本的に、インポートしたいscssをstyle.cssに書けば、それがstyle.cssにコンパイルされます。  
-構成は下記のとおりです。
+基本的に、インポートしたいscssをstyle.scssに書けば、それがstyle.cssにコンパイルされます。
 
-    style.scss
-    ┣ _normalize.scss
-    ┣ _variable.scss
-    ┣ _mixin.scss
-    ┣ _dash.scss
-    ┣ _user.scss
-    ┣ _media-queries.scss
-    ┗ fontello-entypo
-        ┣ _fontello.scss
-        ┣ (_fontello-codes.scss)
-        ┣ (_fontello-embedded.scss)
-        ┣ (_fontello-ie7.scss)
-        ┗ (_fontello-ie7-codes.scss)
+### ファイル構成
+ファイル構成は下記のとおりです。
+
+    [project]
+     ├[files]
+     │ ├[_scss]
+     │ │ ├[module]
+     │ │ │ ├[fontello-entypo]
+     │ │ │ ├_module__button.scss
+     │ │ │ ├_module__common.scss
+     │ │ │ ├_module__gridsystem.scss
+     │ │ │ ├_module__iconfont.scss
+     │ │ │ ├_module__margin.scss
+     │ │ │ └_module__textalign.scss
+     │ │ ├_media-queries.scss
+     │ │ ├_mixin.scss
+     │ │ ├_media-queries.scss
+     │ │ ├_normalize.scss
+     │ │ ├_user.scss
+     │ │ ├_variable.scss
+     │ │ └style.scss
+     │ ├[font]
+     │ ├[js]
+     │ ├index.html
+     │ └style.css
+     ├[node_modules]
+     ├config.rb
+     ├Gruntfile.js
+     └package.json
 
 ### \_normalize.scss
 [normalize.css](http://necolas.github.io/normalize.css/)をSCSSに拡張子を変えたものです。
@@ -97,10 +123,6 @@ style.scssの7行目あたりに、
     
 にすればNormalizeではなくResetになります。
 
-### \_fontello-entypo.scss
-アイコンフォントを読み込んだりするscssです。普通の[Entypo](http://www.entypo.com/)から、[Fontello](http://fontello.com/)で生成したEntypoに変更しました(2013-12-10)。  
-IE7に対応させたい場合は、\_fontello-entypo.scssにて`// @import "fontello-entypo/_fontello-ie7";`のコメントアウトを解除してください。
-
 ### \_variable.scss
 変数を格納したSCSSです。変数を使いたい場合はここに書くと良いです。
 
@@ -116,29 +138,76 @@ IE7に対応させたい場合は、\_fontello-entypo.scssにて`// @import "fon
 | @include gradient($direction, $lighten, $color, $percent); | 要素の背景をグラデーションで塗りたい時に使えます |
 | @include inline-block | IE7に対応したdisplay: inline-block;が入ります |
 
-### \_dash.css
-このフレームワーク特有のあれこれが書いてあるSCSSです。  
-**できれば編集せずにお使い下さい**(あちこちで不具合が出る可能性があります)。
+#### BEM
+BEM記法をSassで書けるようなmixinを用意しています。  
+\_mixin.scssの88行目に、
 
-#### 960 Grid System
+    // BEM (Require Sass 3.3)
+
+という項目がありますので、コメントアウトを解除してください。Sass 3.3以上が必要です。Sass 3.3のインストールは、ターミナルにて
+
+    gem install sass --pre
+
+で可能です。
+
+##### 使用例
+こんな感じで書くことができます([ここ](http://howtohp.com/css/sass-bem.html)を参考にさせていただきました)
+
+    .block {
+      color:red;
+      @include e(element) {
+        color:gray;
+        @include m(modifier) {
+          color:green;
+        } 
+      }
+      @include m(modifier) {
+        color:white;
+      }
+    }
+
+### \_user.scss
+ここに各自スタイルを書いていくことができます。  
+…という曖昧なルールを設けているだけで、使うか使わないかはご自由にどうぞ。
+
+### module
+便利なSCSSが用意されていてもこのサイトでは使わない、というニーズに応えたモジュール式SCSSです。個別に`@import`するかしないかをstyle.scssに記述し、必要なスタイルだけを読み込みます。
+
+#### \_module__common.scss
+一般的にどのサイトでも共通して適用するスタイルをまとめたものです。基本的に読み込んでおいて問題はないと思います
+
+#### \_module__iconfont.scss
+アイコンフォントを読み込んだりするscssです。普通の[Entypo](http://www.entypo.com/)から、[Fontello](http://fontello.com/)で生成したEntypoに変更しました(2013-12-10)。  
+IE7に対応させたい場合は、\_module__iconfont.scssにて`// @import "fontello-entypo/_fontello-ie7";`のコメントアウトを解除してください。
+
+#### \_module__gridsystem.scss
 [960 Grid System](http://960.gs/)をベースにして、レスポンシブ対応させたグリッドシステムを用意していますので、グリッドを使いたい場合は下記のように書いてください。
 
     <div class="container">
-      <div class="grid-6">.grid-6</div>
-      <div class="grid-6">.grid-6</div>
+   	  <div class="row">
+        <div class="column-6">
+          <p>.column-6</p>
+        </div>
+        <div class="column-6">
+          <p>.column-6</p>
+        </div>
+      </div>
     </div>
 
-横並びをさせずに折り返したい場合は、下記のようにします。
+カラムを右に寄せたい場合は、`.right`をクラス名に追記します。
 
     <div class="container">
-      <div class="grid-3">.grid-3</div>
-      <div class="grid-3">.grid-3</div>
-      <div class="grid-4 clear">.grid-4</div>
+   	  <div class="row">
+        <div class="column-8">
+          <p>.column-6</p>
+        </div>
+        <div class="column-3 right">
+          <p>.column-6</p>
+        </div>
+      </div>
     </div>
 
-一番最後のブロック(div.grid-4)が折り返されます。
-
-#### margin
+#### \_module__margin.scss
 `.mt-10`のようなmargin-top/margin-bottom用のクラスを用意していますので、必要であればお使いください(多用は禁物)。  
 個人的に、昔よく使われていたこのクラスの振り方はレスポンシブデザインには不適合だと思います。`.mt-50 { margin-top: 30px; }`とかが多発するので。あくまで補助的にお使い下さい
 
@@ -148,7 +217,7 @@ IE7に対応させたい場合は、\_fontello-entypo.scssにて`// @import "fon
     margin-bottom
     mb-5 〜 .mb-100 (margin-bottom:5px; 〜 margin-bottom:100px;)
     
-#### Button
+#### \_module__button.scss
 aタグなどに`.btn`を付与すると自動的にボタンになりますので、よければお使いください。  
 4つのサイズがあります。
 
@@ -158,6 +227,16 @@ aタグなどに`.btn`を付与すると自動的にボタンになりますの�
 | .btn | 普通のボタン |
 | .btn.large | 大きいボタン |
 | .btn.x-large | 超大きいボタン |
+
+#### \_module__textalign.scss
+クラス名を付加するとテキストや要素の右揃え/左揃えなどを設定できるSCSSです。
+
+| class名 | 説明 |
+|-----|-----|
+| .align-center | 中央揃え |
+| .align-left | 左揃え |
+| .align-right | 右揃え |
+| .align-justify | 両端揃え |
 
 ### \_user.scss
 制作するサイト独自のスタイルはここに書くと捗ります。
@@ -209,7 +288,8 @@ Facebook OGPとTwitter Meta用のmetaタグが最初から用意されている�
 #### fb:admins & fb:app_id
 これは**どちらかだけ**を記述すれば良いです。  
 [FacebookアプリのIDを調べる場合はこちら](https://developers.facebook.com/apps)  
-[FacebookのユーザーIDを調べる場合はこちら](http://biz.comlog.jp/manual2/20400.html)
+[FacebookのユーザーIDを調べる場合はこちら](http://biz.comlog.jp/manual2/20400.html)  
+片方だけ記述した場合、もう片方のタグは削除して下さい。
 
 #### og:type
 og:typeの一覧は[ここ](http://www.inventory.co.jp/labo/facebook/facebook-open-graph-protocol-ogtype.html)とかを見れば良いです。  
@@ -218,7 +298,8 @@ og:typeの一覧は[ここ](http://www.inventory.co.jp/labo/facebook/facebook-op
 #### og:image
 サイトがシェアされた時に表示されるサムネイル的な画像です。いい感じの画像を用意してください。  
 **URLは絶対パスで書く必要があります。**  
-画像の大きさは、[ここ](http://snowadays.jp/2013/09/2106)とかを見れば良いです。(多分500x500px以上なら問題なし)
+画像の大きさは、[ここ](http://snowadays.jp/2013/09/2106)とかを見れば良いです。(多分500x500px以上なら問題なし)  
+[OGP画像シミュレータ](http://ogimage.tsmallfield.com/)という便利なサイトもあります
 
 #### article:publisher
 投稿がシェアされてタイムラインに載った時、Facebookページのフォローボタンが表示されます。FacebookページのURLを入力して下さい。  
@@ -258,6 +339,16 @@ Facebookページではなく個人アカウントの場合は、`article:author
 
 
 ## Changelog
+### 2.0 (2014-1-12)
+* SCSSをモジュール式に、フォルダ構造も変更
+* グリッドシステムの書き直し、構造とクラス名も変更
+* \_mixin.scssのMedia Queriesを修正
+* .sass-cache作らないようにした
+* Grunt Ready
+* BEM Ready
+* その他小さな不具合の修正
+* どの程度のアップデートから2.0とか3.0にすればいいのか悩む
+
 ### 1.1 (2013-12-10)
 * linkタグの修正
 * \_mixin.scssのMedia Queriesを修正、inline-blockを追加

@@ -1,0 +1,77 @@
+// Grid System
+$columnCount: 12;
+$columnWidth: 100% / $columnCount;
+
+.container {
+  $columnMargin: 1.8%;
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $width-pc;
+  padding-left: 30px;
+  padding-right: 30px;
+  @include clearfix;
+  @include box-sizing(content-box);
+  
+  .row {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    @include clearfix;
+    
+    @for $i from 1 through $columnCount {
+      .column-#{$i} {
+        float: left;
+        margin-left: $columnMargin / 2;
+        margin-right: $columnMargin / 2;
+        width: $columnWidth * $i - $columnMargin;
+        
+        &.right {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+
+// Tablet
+@include mediaquery-tablet {
+  .container {
+    $columnMargin: 2.5%;
+  
+    max-width: $width-tablet;
+    
+    .row {
+      @for $i from 1 through $columnCount {
+        .column-#{$i} {
+          float: left;
+          margin-left: $columnMargin / 2;
+          margin-right: $columnMargin / 2;
+          width: $columnWidth * $i - $columnMargin;
+        }
+      }
+    }
+  }
+}
+
+
+// SmartPhone
+@include mediaquery-smartphone {
+  .container {
+    max-width: $width-smartphone;
+    padding-left: 3%;
+    padding-right: 3%;
+    
+    .row {
+      @for $i from 1 through $columnCount {
+        .column-#{$i} {
+          float: none;
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

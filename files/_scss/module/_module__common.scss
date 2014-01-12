@@ -6,8 +6,9 @@
 body {
   background: $bgColor;
   color: $color;
-  font-family: $font;
-  font-size: 100%;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
   
   // Text Highlight
   ::selection {
