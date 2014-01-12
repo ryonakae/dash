@@ -138,35 +138,76 @@ style.scssの7行目あたりに、
 | @include gradient($direction, $lighten, $color, $percent); | 要素の背景をグラデーションで塗りたい時に使えます |
 | @include inline-block | IE7に対応したdisplay: inline-block;が入ります |
 
+#### BEM
+BEM記法をSassで書けるようなmixinを用意しています。  
+\_mixin.scssの88行目に、
+
+    // BEM (Require Sass 3.3)
+
+という項目がありますので、コメントアウトを解除してください。Sass 3.3以上が必要です。Sass 3.3のインストールは、ターミナルにて
+
+    gem install sass --pre
+
+で可能です。
+
+##### 使用例
+こんな感じで書くことができます([ここ](http://howtohp.com/css/sass-bem.html)を参考にさせていただきました)
+
+    .block {
+      color:red;
+      @include e(element) {
+        color:gray;
+        @include m(modifier) {
+          color:green;
+        } 
+      }
+      @include m(modifier) {
+        color:white;
+      }
+    }
+
 ### \_user.scss
-ここに各自スタイルを書いていくことができます。
+ここに各自スタイルを書いていくことができます。  
+…という曖昧なルールを設けているだけで、使うか使わないかはご自由にどうぞ。
 
 ### module
 便利なSCSSが用意されていてもこのサイトでは使わない、というニーズに応えたモジュール式SCSSです。個別に`@import`するかしないかをstyle.scssに記述し、必要なスタイルだけを読み込みます。
 
-### \_fontello-entypo.scss
-アイコンフォントを読み込んだりするscssです。普通の[Entypo](http://www.entypo.com/)から、[Fontello](http://fontello.com/)で生成したEntypoに変更しました(2013-12-10)。  
-IE7に対応させたい場合は、\_fontello-entypo.scssにて`// @import "fontello-entypo/_fontello-ie7";`のコメントアウトを解除してください。
+#### \_module__common.scss
+一般的にどのサイトでも共通して適用するスタイルをまとめたものです。基本的に読み込んでおいて問題はないと思います
 
-#### 960 Grid System
+#### \_module__iconfont.scss
+アイコンフォントを読み込んだりするscssです。普通の[Entypo](http://www.entypo.com/)から、[Fontello](http://fontello.com/)で生成したEntypoに変更しました(2013-12-10)。  
+IE7に対応させたい場合は、\_module__iconfont.scssにて`// @import "fontello-entypo/_fontello-ie7";`のコメントアウトを解除してください。
+
+#### \_module__gridsystem.scss
 [960 Grid System](http://960.gs/)をベースにして、レスポンシブ対応させたグリッドシステムを用意していますので、グリッドを使いたい場合は下記のように書いてください。
 
     <div class="container">
-      <div class="grid-6">.grid-6</div>
-      <div class="grid-6">.grid-6</div>
+   	  <div class="row">
+        <div class="column-6">
+          <p>.column-6</p>
+        </div>
+        <div class="column-6">
+          <p>.column-6</p>
+        </div>
+      </div>
     </div>
 
-横並びをさせずに折り返したい場合は、下記のようにします。
+カラムを右に寄せたい場合は、`.right`をクラス名に追記します。
 
     <div class="container">
-      <div class="grid-3">.grid-3</div>
-      <div class="grid-3">.grid-3</div>
-      <div class="grid-4 clear">.grid-4</div>
+   	  <div class="row">
+        <div class="column-8">
+          <p>.column-6</p>
+        </div>
+        <div class="column-3 right">
+          <p>.column-6</p>
+        </div>
+      </div>
     </div>
 
-一番最後のブロック(div.grid-4)が折り返されます。
-
-#### margin
+#### \_module__margin.scss
 `.mt-10`のようなmargin-top/margin-bottom用のクラスを用意していますので、必要であればお使いください(多用は禁物)。  
 個人的に、昔よく使われていたこのクラスの振り方はレスポンシブデザインには不適合だと思います。`.mt-50 { margin-top: 30px; }`とかが多発するので。あくまで補助的にお使い下さい
 
@@ -176,7 +217,7 @@ IE7に対応させたい場合は、\_fontello-entypo.scssにて`// @import "fon
     margin-bottom
     mb-5 〜 .mb-100 (margin-bottom:5px; 〜 margin-bottom:100px;)
     
-#### Button
+#### \_module__button.scss
 aタグなどに`.btn`を付与すると自動的にボタンになりますので、よければお使いください。  
 4つのサイズがあります。
 
@@ -186,6 +227,16 @@ aタグなどに`.btn`を付与すると自動的にボタンになりますの�
 | .btn | 普通のボタン |
 | .btn.large | 大きいボタン |
 | .btn.x-large | 超大きいボタン |
+
+#### \_module__textalign.scss
+クラス名を付加するとテキストや要素の右揃え/左揃えなどを設定できるSCSSです。
+
+| class名 | 説明 |
+|-----|-----|
+| .align-center | 中央揃え |
+| .align-left | 左揃え |
+| .align-right | 右揃え |
+| .align-justify | 両端揃え |
 
 ### \_user.scss
 制作するサイト独自のスタイルはここに書くと捗ります。
@@ -237,7 +288,8 @@ Facebook OGPとTwitter Meta用のmetaタグが最初から用意されている�
 #### fb:admins & fb:app_id
 これは**どちらかだけ**を記述すれば良いです。  
 [FacebookアプリのIDを調べる場合はこちら](https://developers.facebook.com/apps)  
-[FacebookのユーザーIDを調べる場合はこちら](http://biz.comlog.jp/manual2/20400.html)
+[FacebookのユーザーIDを調べる場合はこちら](http://biz.comlog.jp/manual2/20400.html)  
+片方だけ記述した場合、もう片方のタグは削除して下さい。
 
 #### og:type
 og:typeの一覧は[ここ](http://www.inventory.co.jp/labo/facebook/facebook-open-graph-protocol-ogtype.html)とかを見れば良いです。  
@@ -246,7 +298,8 @@ og:typeの一覧は[ここ](http://www.inventory.co.jp/labo/facebook/facebook-op
 #### og:image
 サイトがシェアされた時に表示されるサムネイル的な画像です。いい感じの画像を用意してください。  
 **URLは絶対パスで書く必要があります。**  
-画像の大きさは、[ここ](http://snowadays.jp/2013/09/2106)とかを見れば良いです。(多分500x500px以上なら問題なし)
+画像の大きさは、[ここ](http://snowadays.jp/2013/09/2106)とかを見れば良いです。(多分500x500px以上なら問題なし)  
+[OGP画像シミュレータ](http://ogimage.tsmallfield.com/)という便利なサイトもあります
 
 #### article:publisher
 投稿がシェアされてタイムラインに載った時、Facebookページのフォローボタンが表示されます。FacebookページのURLを入力して下さい。  
@@ -286,6 +339,16 @@ Facebookページではなく個人アカウントの場合は、`article:author
 
 
 ## Changelog
+### 2.0 (2014-1-12)
+* SCSSをモジュール式に、フォルダ構造も変更
+* グリッドシステムの書き直し、構造とクラス名も変更
+* \_mixin.scssのMedia Queriesを修正
+* .sass-cache作らないようにした
+* Grunt Ready
+* BEM Ready
+* その他小さな不具合の修正
+* どの程度のアップデートから2.0とか3.0にすればいいのか悩む
+
 ### 1.1 (2013-12-10)
 * linkタグの修正
 * \_mixin.scssのMedia Queriesを修正、inline-blockを追加
